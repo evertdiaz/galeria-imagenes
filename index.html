@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/blueimp-gallery.min.css">
+	<link rel="stylesheet" type="text/css" href="css/stilo.css">
+	<title>Slider</title>
+</head>
+<body>
+	<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+	    <div class="slides"></div>
+	    <h3 class="title"></h3>
+	    <a class="prev">‹</a>
+	    <a class="next">›</a>
+	    <a class="close">×</a>
+	    <a class="play-pause"></a>
+	    <ol class="indicator"></ol>
+	</div>
+	<div id="links">
+    	<section class="imgn">
+    		<a href="image/squero.png" title="Esquero">
+        		<img src="image/squero.png" alt="esquero">
+    		</a>
+    	</section>
+    	<section class="imgn">
+    		<a href="image/vtv.gif" title="Pitochu">
+        		<img src="image/vtv.gif" alt="pitochu">
+    		</a>
+    	</section>
+    	<section class="imgn">
+    		<a href="image/wowofe.jpg" title="Wowofe">
+        		<img src="image/wowofe.jpg" alt="wowofe">
+    		</a>
+    	</section>
+</div>
+	<script src="js/blueimp-gallery.min.js"></script>
+	<script>
+document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
+</script>
+</body>
+</html>
